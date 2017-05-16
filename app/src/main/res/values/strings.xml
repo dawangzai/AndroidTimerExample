@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">AndroidTimerExample</string>
+    <string name="text_timer_introduction">简介</string>
+    <string name="text_timer_example">示例</string>
+</resources>
