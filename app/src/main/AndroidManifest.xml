@@ -15,6 +15,11 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".storerushpurchase.StoreRushPurchaseActivity" />
+
+        <activity android:name=".CircleActivity" />
+
+        <activity android:name=".CaptchaActivity" />
     </application>
 
 </manifest>

@@ -1,14 +1,13 @@
 package com.wangzai.androidtimerexample;
 
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.widget.LinearLayout;
+import android.view.View;
 
-public class MainActivity extends AppCompatActivity {
-    private static final String TIMER_STORE_RUSH_PURCHASE = "商城抢购倒计时";
-    private static final String TIMER_CIRCLE = "圆圈倒计时";
-    private static final String TIMER_CAPTCHA = "验证码倒计时";
-    private LinearLayout llExamples;
+import com.wangzai.androidtimerexample.storerushpurchase.StoreRushPurchaseActivity;
+
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -16,18 +15,30 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         findView();
-        addExamples(TIMER_STORE_RUSH_PURCHASE, TIMER_CIRCLE, TIMER_CAPTCHA);
     }
 
     private void findView() {
-        llExamples = (LinearLayout) findViewById(R.id.llExamples);
+        findViewById(R.id.llExamples);
+        findViewById(R.id.tvStoreRushPurchase).setOnClickListener(this);
+        findViewById(R.id.tvCircle).setOnClickListener(this);
+        findViewById(R.id.tvCaptcha).setOnClickListener(this);
     }
 
-    private void addExamples(String... timerNames) {
-        for (String timerName : timerNames) {
-            CommonLinearLayout commonLinearLayout = new CommonLinearLayout(this);
-            commonLinearLayout.setTimerName(timerName);
-            llExamples.addView(commonLinearLayout);
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()) {
+            case R.id.tvStoreRushPurchase:
+                Intent storeRushPurchaseIntent = new Intent(this, StoreRushPurchaseActivity.class);
+                startActivity(storeRushPurchaseIntent);
+                break;
+            case R.id.tvCircle:
+                Intent circleIntent = new Intent(this, CircleActivity.class);
+                startActivity(circleIntent);
+                break;
+            case R.id.tvCaptcha:
+                Intent captchaIntent = new Intent(this, CaptchaActivity.class);
+                startActivity(captchaIntent);
+                break;
         }
     }
 }

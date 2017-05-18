@@ -4,6 +4,7 @@
     android:id="@+id/activity_main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#eaeaea"
     android:orientation="vertical"
     android:padding="10dp"
     tools:context="com.wangzai.androidtimerexample.MainActivity">
@@ -53,9 +54,41 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="10dp"
                 android:text="@string/text_timer_example"
-                android:textColor="#ff868a"
-                android:textSize="18sp"
+                android:textAppearance="@android:style/TextAppearance.Material.Widget" />
+
+            <TextView
+                android:id="@+id/tvStoreRushPurchase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@mipmap/ic_timer_right_arrow"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="商城抢购倒计时"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvCircle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@mipmap/ic_timer_right_arrow"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="圆圈倒计时"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvCaptcha"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableRight="@mipmap/ic_timer_right_arrow"
+                android:gravity="center_vertical"
+                android:padding="10dp"
+                android:text="验证码倒计时"
+                android:textSize="16sp"
                 android:textStyle="bold" />
         </LinearLayout>
     </android.support.v7.widget.CardView>
